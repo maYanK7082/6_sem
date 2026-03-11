@@ -37,9 +37,12 @@ jobs:
       run: echo "Docker Image built successfully"
 # docker hub - 2367te346tr3t2ewyquert7yer
     - name: Docker Login
-      run: echo "${{ secrets.docker_password}}" | docker login -u "${{ secrets.docker_username }}" --password-stdin
+      uses: docker/login-action@v2
+      with:
+        username: ${{ secrets.docker_username }}
+        password: ${{ secrets.docker_password }}
 
-    - name: Login Successful'
+    - name: Login Successful
       run: echo "Logged in to Docker Hub successfully"
 
     - name: Push Docker Image
