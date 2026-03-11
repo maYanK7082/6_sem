@@ -31,19 +31,19 @@ jobs:
     #     cache: 'npm'
     #     # actual command
     - name : Build Docker Image
-      run: docker build -t nehal524/youtube-backend:latest .
+      run: docker build -t mayank7082/node-docker-app:latest .
 
     - name: "Build Successful"
       run: echo "Docker Image built successfully"
 # docker hub - 2367te346tr3t2ewyquert7yer
     - name: Docker Login
-      run: echo "${{ secrets.DOCKER_HUB_PASSWORD }}" | docker login -u "${{ secrets.DOCKER_HUB_USERNAME }}" --password-stdin
+      run: echo "${{ secrets.DOCKER_PASSWORD}}" | docker login -u "${{ secrets.DOCKER_USERNAME }}" --password-stdin
 
     - name: Login Successful'
       run: echo "Logged in to Docker Hub successfully"
 
     - name: Push Docker Image
-      run: docker push nehal524/youtube-backend:latest
+      run: docker push mayank7082/node-docker-app:latest
 
 
   
