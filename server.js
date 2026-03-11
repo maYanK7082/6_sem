@@ -1,3 +1,4 @@
+// Minimal Express server for Docker Assignment
 const express = require("express");
 const app = express();
 
