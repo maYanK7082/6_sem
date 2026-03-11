@@ -40,7 +40,7 @@ jobs:
       run: echo "${{ secrets.DOCKER_PASSWORD}}" | docker login -u "${{ secrets.DOCKER_USERNAME}}" --password-stdin
 
     - name: Login Successful
-      run: echo "Logged in to Docker Hub successfully"
+      run: echo "Logged in to Docker Hub successfull"
 
     - name: Push Docker Image
       run: docker push mayank7082/node-docker-app:latest
